@@ -38,4 +38,3 @@ class PersonController extends Controller
 // validasi
 // migrasi
 // 2 DB bgaimana migrrasi nya
-// 
