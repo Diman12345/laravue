@@ -1,5 +1,7 @@
 <?php
 
+use App\Article;
+use App\Contact;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', function () {
+Route::get('/', function () {
     return view('welcome');
-})->where('any','.*');
+});
+
+Route::get('/multipledb', function(){
+    $contacts = Contact::all();
+    $articles = Article::all();
+    return view('multipledb', compact('contacts','articles'));
+});
